@@ -1,0 +1,2 @@
+date,source,patient_ref,phone,report_received,hba1c,fbs,ppbs,consent_given,free_decode_sent,questions_asked,cousin_minutes,offered,tier,paid_amount,paid_date,day3_checkin,day7_checkin,day14_checkin,referral_made,notes
+2026-10-06,family,,+91XXXXXXXXXX,yes,6.4,118,,yes,yes,"can I eat rice?",12,₹299 reset,yes,299,2026-10-07,1,2,,,"EXAMPLE ROW - delete before use. Keep source honest: family/referral/status/insta/google/clinic"

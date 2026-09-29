@@ -1,20 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "ClarityBS | AI-powered Health Report Decoder for Indian Families",
-  description: "Understand your blood sugar report in simple language. Upload your HbA1c, FBS, PPBS reports and get instant, easy-to-understand explanations and diet recommendations.",
+  title: "ClarityBS: your sugar report, explained in simple language",
+  description:
+    "Send your HbA1c, fasting and post-meal sugar numbers on WhatsApp. A dietician explains them in plain language and helps you build food habits that fit your life.",
 };
 
 export default function RootLayout({
@@ -23,11 +13,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className="h-full antialiased">
+      <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
   );
 }

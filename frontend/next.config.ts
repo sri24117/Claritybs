@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "standalone",
+  async rewrites() {
+    const api = process.env.API_INTERNAL_URL || "http://localhost:5000";
+    return [{ source: "/api/:path*", destination: `${api}/api/:path*` }];
+  },
 };
 
 export default nextConfig;
