@@ -1,0 +1,17 @@
+# Change claritybs.in to your own domain. Cloudflare: A records for @, www, app, api
+# pointing at the KVM IP. Grey cloud (DNS only) until you trust the setup.
+
+claritybs.in, www.claritybs.in, app.claritybs.in {
+	encode gzip
+	reverse_proxy web:3000
+}
+
+api.claritybs.in {
+	@hooks path /wa/* /pay/*
+	handle @hooks {
+		reverse_proxy api:8000
+	}
+	handle {
+		respond "Not found" 404
+	}
+}
